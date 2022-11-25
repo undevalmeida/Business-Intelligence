@@ -29,3 +29,20 @@ Exemplo:
 ![](Exemplo.png)
 
 ---
+## Detalhe de uma dimensão
+
+Uma dimensão é composta de hierarquia, as hierarquias são compostas por níveis e os níveis podem ou não possuir atributos.
+
+### Relação entre as entidades da dimensão
+>* Cliente
+>* Cidade
+>* Estado         
+>* Segmento
+>* Tamanho
+>* Produto
+
+Qual a relação entre estas entidades?  
+1:1? 1:N? N:M?
+
+---
+![](Entidades%20e%20Dimens%C3%A3o.png)
