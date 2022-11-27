@@ -50,3 +50,46 @@ Granularidade foi de 1 em 1 hora.
   * Venda de um produto(Granularidade diária)
   * Custo de mão de obra(Granularidade mensal)
 * As medidas de granularidade diferentes devem ficar em tabelas de fato diferentes
+
+# Limpeza de Dados
+
+Exemplos de Transformações:
+* Lookup
+* Union
+* Funcções de transformação de dados
+* Funções de Datas
+
+---
+* No caso de funções de transformação, teremos diversos exempos aplicados a tipos de dados:  
+## Funções de Datas:
+* Mês da data
+* Ano da data
+* Dia da data
+* Hora da data
+* Mudança de formato da data
+* Soma ou subtração de dados
+
+## Funções de Strings:
+* Interpolação de strings(Concatenar)
+* Dividir (capturar parte da string)
+* Substituir
+* Formato de saída(REGEX)
+* Tirar brancos
+
+## Funções Numéricas:
+* Equações matemáticas
+* Arredondamento
+* Transformação entre unidades numéricas
+
+
+# ODS
+* Em muitos casos precisamos criar tabelas temporárias para efetuar as transformações.
+* ODS(Operational Data Storage).
+
+# ETL
+* Todo este processo de:
+  * Extração(**E**xtract)
+  * Transformação(**T**ransform)
+  * Carga(**L**oad)
+
+
