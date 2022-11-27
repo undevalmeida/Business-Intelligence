@@ -25,7 +25,7 @@ Granularidade foi de 1 em 1 hora.
 
 ---
 
-## Agragando a dimensão tempo
+## Agregando a dimensão tempo
 * Podemos representar a dimensão tempo da mesma maneira que as outras dimensões
   * Modelo Estrela
   * Modelo Floco de Neve
