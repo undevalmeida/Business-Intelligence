@@ -31,3 +31,11 @@
 * Atendente
 * Gerente de Vendas
 * Diretor de Vendas
+
+# Matriz
+* Faturamento Líquido( R$ ) = Faturamento( R$ ) - Custo de Frete( R$ ) - Impostos( R$ )
+* Margem ( R$ ) = Faturamento Líquido( R$ ) - Custo Fixo( R$ ) - Custo Variável( R$ )
+* Preço Médio( R$ ) = Faturamento( R$ )/Quantidade Vendidas(Litros)
+* Variação da Meta Faturamento = (Faturamento Líquido( R$ ) / Meta de Faturamento( R$ ))-1) * 100
+* Variação da Meta de Custo = (((Custo Fixo + Custo Variável) / Meta de Custo( R$ )) - 1) * 100
+* Variação da Meta da Margem = (((Margem( R$ )/(MEta de Faturamento - Meta de Margem))-1) * 100
