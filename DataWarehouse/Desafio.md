@@ -39,3 +39,8 @@
 * Variação da Meta Faturamento = (Faturamento Líquido( R$ ) / Meta de Faturamento( R$ ))-1) * 100
 * Variação da Meta de Custo = (((Custo Fixo + Custo Variável) / Meta de Custo( R$ )) - 1) * 100
 * Variação da Meta da Margem = (((Margem( R$ )/(MEta de Faturamento - Meta de Margem))-1) * 100
+
+# Variações do BI
+* Data minning
+* Balance Scorecard
+* Big Data
