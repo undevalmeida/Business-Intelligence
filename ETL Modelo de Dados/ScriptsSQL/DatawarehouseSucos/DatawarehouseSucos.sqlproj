@@ -62,6 +62,9 @@
   <ItemGroup>
     <Build Include="Tabelas\Dim_Fabrica.sql" />
     <Build Include="Tabelas\Dim_Cliente.sql" />
+    <Build Include="Tabelas\Dim_Categoria.sql" />
+    <Build Include="Tabelas\Dim_Marca.sql" />
+    <Build Include="Tabelas\Dim_Produto.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatawarehouseSucos.refactorlog" />

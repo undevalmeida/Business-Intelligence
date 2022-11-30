@@ -241,6 +241,66 @@ IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
 
 
 GO
+PRINT N'Creating Table [dbo].[Dim_Categoria]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Categoria] (
+    [Cod_Categoria]  NVARCHAR (50)  NOT NULL,
+    [Desc_Categoria] NVARCHAR (200) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Categoria] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Dim_Marca]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Marca] (
+    [Cod_Marca]     NVARCHAR (50)  NOT NULL,
+    [Desc_Marca]    NVARCHAR (200) NULL,
+    [Cod_Categoria] NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Marca] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Dim_Clientes]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Clientes] (
+    [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
+    [Desc_Cliente]  NVARCHAR (200) NULL,
+    [Cod_Cidade]    NVARCHAR (50)  NULL,
+    [Desc_Cidade]   NVARCHAR (200) NULL,
+    [Cod_Estado]    NVARCHAR (50)  NULL,
+    [Desc_Estado]   NVARCHAR (200) NULL,
+    [Cod_Regiao]    NVARCHAR (50)  NULL,
+    [Desc_Regiao]   NVARCHAR (200) NULL,
+    [Cod_Segmento]  NVARCHAR (50)  NULL,
+    [Desc_Segmento] NVARCHAR (200) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Dim_Produto]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Produto] (
+    [Cod_Produto]  NVARCHAR (50)  NOT NULL,
+    [Desc_Produto] NVARCHAR (200) NULL,
+    [Atr_Tamanho ] NVARCHAR (200) NULL,
+    [Atr_Sabor]    NVARCHAR (200) NULL,
+    [Cod_Marca]    NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Produto] ASC)
+);
+
+
+GO
 PRINT N'Creating Table [dbo].[Dim_Fabrica]...';
 
 
@@ -253,23 +313,21 @@ CREATE TABLE [dbo].[Dim_Fabrica] (
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Clientes]...';
+PRINT N'Creating Foreign Key [dbo].[FK_Dim_Marca_Dim_Categoria]...';
 
 
 GO
-CREATE TABLE [dbo].[Dim_Clientes] (
-    [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
-    [Desc_Cliente]  NVARCHAR (200) NULL,
-    [Cod_Cidade]    NCHAR (50)     NULL,
-    [Desc_Cidade]   NCHAR (200)    NULL,
-    [Cod_Estado]    NCHAR (50)     NULL,
-    [Desc_Estado]   NCHAR (200)    NULL,
-    [Cod_Regiao]    NCHAR (50)     NULL,
-    [Desc_Regiao]   NCHAR (200)    NULL,
-    [Cod_Segmento]  NCHAR (50)     NULL,
-    [Desc_Segmento] NCHAR (200)    NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
-);
+ALTER TABLE [dbo].[Dim_Marca]
+    ADD CONSTRAINT [FK_Dim_Marca_Dim_Categoria] FOREIGN KEY ([Cod_Categoria]) REFERENCES [dbo].[Dim_Categoria] ([Cod_Categoria]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Dim_Produto_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Dim_Produto]
+    ADD CONSTRAINT [FK_Dim_Produto_Dim_Produto] FOREIGN KEY ([Cod_Marca]) REFERENCES [dbo].[Dim_Marca] ([Cod_Marca]);
 
 
 GO
@@ -285,6 +343,16 @@ IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9291e02a-fe32-4ab7-aaae-428e3f9df4c3')
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '8b618adf-8e2e-4bad-afb0-3a3b0776b0c8')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('8b618adf-8e2e-4bad-afb0-3a3b0776b0c8')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'b135b8d6-260e-4cae-a4c7-6ab9958889ee')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('b135b8d6-260e-4cae-a4c7-6ab9958889ee')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '5a05d076-6158-4aa0-9822-70a905e4541f')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('5a05d076-6158-4aa0-9822-70a905e4541f')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'd10c5efb-9e13-4c59-8a82-d2b12b2fe512')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('d10c5efb-9e13-4c59-8a82-d2b12b2fe512')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '3cc7cde9-65fa-40d1-976f-17360af71438')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('3cc7cde9-65fa-40d1-976f-17360af71438')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '31b47a84-543d-467f-b8eb-b2b18589b292')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('31b47a84-543d-467f-b8eb-b2b18589b292')
 
 GO
 
