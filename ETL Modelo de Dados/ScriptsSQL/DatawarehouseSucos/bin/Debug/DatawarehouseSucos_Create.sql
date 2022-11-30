@@ -253,6 +253,26 @@ CREATE TABLE [dbo].[Dim_Fabrica] (
 
 
 GO
+PRINT N'Creating Table [dbo].[Dim_Clientes]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Clientes] (
+    [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
+    [Desc_Cliente]  NVARCHAR (200) NULL,
+    [Cod_Cidade]    NCHAR (50)     NULL,
+    [Desc_Cidade]   NCHAR (200)    NULL,
+    [Cod_Estado]    NCHAR (50)     NULL,
+    [Desc_Estado]   NCHAR (200)    NULL,
+    [Cod_Regiao]    NCHAR (50)     NULL,
+    [Desc_Regiao]   NCHAR (200)    NULL,
+    [Cod_Segmento]  NCHAR (50)     NULL,
+    [Desc_Segmento] NCHAR (200)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
+);
+
+
+GO
 -- Refactoring step to update target server with deployed transaction logs
 
 IF OBJECT_ID(N'dbo.__RefactorLog') IS NULL
@@ -263,6 +283,8 @@ END
 GO
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '9291e02a-fe32-4ab7-aaae-428e3f9df4c3')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9291e02a-fe32-4ab7-aaae-428e3f9df4c3')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '8b618adf-8e2e-4bad-afb0-3a3b0776b0c8')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('8b618adf-8e2e-4bad-afb0-3a3b0776b0c8')
 
 GO
 
