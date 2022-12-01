@@ -313,6 +313,22 @@ CREATE TABLE [dbo].[Dim_Fabrica] (
 
 
 GO
+PRINT N'Creating Table [dbo].[Dim_Organizacional]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Organizacional] (
+    [Cod_Filho]  NVARCHAR (50)  NOT NULL,
+    [Desc_Filho] NVARCHAR (200) NULL,
+    [Cod_Pai]    NVARCHAR (50)  NULL,
+    [Esquerda]   INT            NULL,
+    [Direita]    INT            NULL,
+    [Nível]      INT            NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Filho] ASC)
+);
+
+
+GO
 PRINT N'Creating Foreign Key [dbo].[FK_Dim_Marca_Dim_Categoria]...';
 
 
@@ -328,6 +344,15 @@ PRINT N'Creating Foreign Key [dbo].[FK_Dim_Produto_Dim_Produto]...';
 GO
 ALTER TABLE [dbo].[Dim_Produto]
     ADD CONSTRAINT [FK_Dim_Produto_Dim_Produto] FOREIGN KEY ([Cod_Marca]) REFERENCES [dbo].[Dim_Marca] ([Cod_Marca]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Dim_Organizacional_Dim_Organizacional]...';
+
+
+GO
+ALTER TABLE [dbo].[Dim_Organizacional]
+    ADD CONSTRAINT [FK_Dim_Organizacional_Dim_Organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
 
 
 GO
@@ -353,6 +378,8 @@ IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('3cc7cde9-65fa-40d1-976f-17360af71438')
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '31b47a84-543d-467f-b8eb-b2b18589b292')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('31b47a84-543d-467f-b8eb-b2b18589b292')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '9fb2cc35-a3e5-4141-9d01-8e70c2225478')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9fb2cc35-a3e5-4141-9d01-8e70c2225478')
 
 GO
 
