@@ -329,6 +329,34 @@ CREATE TABLE [dbo].[Dim_Organizacional] (
 
 
 GO
+PRINT N'Creating Table [dbo].[Dim_Tempo]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Tempo] (
+    [Cod_Dia]            NVARCHAR (50) NOT NULL,
+    [Data]               DATE          NULL,
+    [CodSemana]          INT           NULL,
+    [Nome_Dia_Semana]    NVARCHAR (50) NULL,
+    [Cod_Mes]            INT           NULL,
+    [Nome_Mes]           NVARCHAR (50) NULL,
+    [Cod_Mes_Ano]        NVARCHAR (50) NULL,
+    [Nome_Mes_Ano]       NVARCHAR (50) NULL,
+    [Cod_Trimestre]      INT           NULL,
+    [Nome_Trimestre]     NVARCHAR (50) NULL,
+    [Cod_Trimestre_Ano]  NVARCHAR (50) NULL,
+    [Nome_Trimestre_Ano] NVARCHAR (50) NULL,
+    [Cod_Semestre]       INT           NULL,
+    [Nome_Semestre]      NVARCHAR (50) NULL,
+    [Cod_Semestre_Ano]   NCHAR (10)    NULL,
+    [Nome_Semestre_Ano]  NVARCHAR (50) NULL,
+    [Ano]                NVARCHAR (50) NULL,
+    [Tipo_Dia]           NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC)
+);
+
+
+GO
 PRINT N'Creating Foreign Key [dbo].[FK_Dim_Marca_Dim_Categoria]...';
 
 
@@ -380,6 +408,16 @@ IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('31b47a84-543d-467f-b8eb-b2b18589b292')
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '9fb2cc35-a3e5-4141-9d01-8e70c2225478')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9fb2cc35-a3e5-4141-9d01-8e70c2225478')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'e595bb60-b1d4-45f5-b8e3-33af37e667e5')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('e595bb60-b1d4-45f5-b8e3-33af37e667e5')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '8a102b38-f2e0-42d3-aa25-4381957cbb9c')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('8a102b38-f2e0-42d3-aa25-4381957cbb9c')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '3860d46d-897a-4490-95c7-1f24552b4c53')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('3860d46d-897a-4490-95c7-1f24552b4c53')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '81ee1dc1-0896-40db-bbca-a95e653e30a0')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('81ee1dc1-0896-40db-bbca-a95e653e30a0')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'bbf87ecf-e45e-4008-bc3e-40affe194e08')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('bbf87ecf-e45e-4008-bc3e-40affe194e08')
 
 GO
 

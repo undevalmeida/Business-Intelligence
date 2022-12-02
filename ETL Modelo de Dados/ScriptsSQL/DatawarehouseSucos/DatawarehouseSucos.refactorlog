@@ -56,4 +56,39 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Cod_Filho" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e595bb60-b1d4-45f5-b8e3-33af37e667e5" ChangeDateTime="12/02/2022 01:48:26">
+    <Property Name="ElementName" Value="[dbo].[Dim_Tempo].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dim_Tempo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Cod_Dia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8a102b38-f2e0-42d3-aa25-4381957cbb9c" ChangeDateTime="12/02/2022 02:00:58">
+    <Property Name="ElementName" Value="[dbo].[Dim_Tempo].[E_Dia_Semana]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dim_Tempo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tipo_Dia" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3860d46d-897a-4490-95c7-1f24552b4c53" ChangeDateTime="12/02/2022 02:34:10">
+    <Property Name="ElementName" Value="[dbo].[Fato].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Fato]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Cod_Cliente" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81ee1dc1-0896-40db-bbca-a95e653e30a0" ChangeDateTime="12/02/2022 02:51:01">
+    <Property Name="ElementName" Value="[dbo].[Fato].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Fato]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Cod_Cliente" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bbf87ecf-e45e-4008-bc3e-40affe194e08" ChangeDateTime="12/02/2022 02:51:36">
+    <Property Name="ElementName" Value="[dbo].[Fato].[Cod_fabrica]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Fato]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Cod_Fabrica" />
+  </Operation>
 </Operations>
