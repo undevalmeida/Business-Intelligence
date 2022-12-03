@@ -1,0 +1,12 @@
+03/12/2022 19:48:53	This log contains information about the import operation of the script 'Fato_2.sql' into project 'DatawarehouseSucos' on computer 'ANDRÉ' by user'andre.
+03/12/2022 19:48:53	Started importing file: C:\Users\andre\OneDrive\Documentos\CURSOS\POWER BI\Business Intelligence\ETL Modelo de Dados\ScriptsSQL\DatawarehouseSucos\Tabelas\Fato_2.sql 
+03/12/2022 19:48:53	File name C:\Users\andre\OneDrive\Documentos\CURSOS\POWER BI\Business Intelligence\ETL Modelo de Dados\ScriptsSQL\DatawarehouseSucos\Tabelas\Fato_2.sql (size: 730)
+03/12/2022 19:48:53	Parsing import script
+03/12/2022 19:48:53	Total number of batches in script: 1
+03/12/2022 19:48:53	Total number of statements in script: 1
+03/12/2022 19:48:53	The script was successfully imported into the project.
+03/12/2022 19:48:53	Analyzing schema objects...
+03/12/2022 19:48:53	Scanning project for duplicate elements
+03/12/2022 19:48:53	Finished duplicate element processing
+03/12/2022 19:48:53	A summary of the import was saved to the following location: C:\Users\andre\OneDrive\Documentos\CURSOS\POWER BI\Business Intelligence\ETL Modelo de Dados\ScriptsSQL\DatawarehouseSucos\Import Script Logs\Fato_2_sql_20221203104853.log
+03/12/2022 19:48:53	Click Finish to continue...

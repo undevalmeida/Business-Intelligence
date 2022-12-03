@@ -357,6 +357,83 @@ CREATE TABLE [dbo].[Dim_Tempo] (
 
 
 GO
+PRINT N'Creating Table [dbo].[Fato_1]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_1] (
+    [Cod_Cliente]        NVARCHAR (50) NOT NULL,
+    [Cod_Produto]        NVARCHAR (50) NOT NULL,
+    [Cod_Organizacional] NVARCHAR (50) NOT NULL,
+    [Cod_Fabrica]        NVARCHAR (50) NOT NULL,
+    [Cod_Dia]            NVARCHAR (50) NOT NULL,
+    [Faturamento]        FLOAT (53)    NULL,
+    [Imposto]            FLOAT (53)    NULL,
+    [Custo_Variavel]     FLOAT (53)    NULL,
+    [Quantidade_vendida] FLOAT (53)    NULL,
+    [Unidade_Vendida]    FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Dia] ASC, [Cod_Produto] ASC, [Cod_Organizacional] ASC, [Cod_Fabrica] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Fato_2]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_2] (
+    [Cod_Cliente] NVARCHAR (50) NOT NULL,
+    [Cod_Produto] NVARCHAR (50) NOT NULL,
+    [Cod_Fabrica] NVARCHAR (50) NOT NULL,
+    [Cod_Dia]     NVARCHAR (50) NOT NULL,
+    [Frete]       FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Dia] ASC, [Cod_Produto] ASC, [Cod_Fabrica] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Fato_4]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_4] (
+    [Cod_Cliente]        NVARCHAR (50) NOT NULL,
+    [Cod_Produto]        NVARCHAR (50) NOT NULL,
+    [Cod_Organizacional] NVARCHAR (50) NOT NULL,
+    [Cod_Dia]            NVARCHAR (50) NOT NULL,
+    [Meta_Faturamento]   FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Dia] ASC, [Cod_Produto] ASC, [Cod_Organizacional] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Fato_3]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_3] (
+    [Cod_Fabrica] NVARCHAR (50) NOT NULL,
+    [Cod_Dia]     NVARCHAR (50) NOT NULL,
+    [Custo_Fixo]  FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC, [Cod_Fabrica] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [dbo].[Fato_5]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_5] (
+    [Cod_Produto] NVARCHAR (50) NOT NULL,
+    [Cod_Fabrica] NVARCHAR (50) NOT NULL,
+    [Cod_Dia]     NVARCHAR (50) NOT NULL,
+    [Meta_Custo]  FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC, [Cod_Produto] ASC, [Cod_Fabrica] ASC)
+);
+
+
+GO
 PRINT N'Creating Foreign Key [dbo].[FK_Dim_Marca_Dim_Categoria]...';
 
 
@@ -381,6 +458,168 @@ PRINT N'Creating Foreign Key [dbo].[FK_Dim_Organizacional_Dim_Organizacional]...
 GO
 ALTER TABLE [dbo].[Dim_Organizacional]
     ADD CONSTRAINT [FK_Dim_Organizacional_Dim_Organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_1_Dim_Cliente]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_1]
+    ADD CONSTRAINT [FK_Fato_1_Dim_Cliente] FOREIGN KEY ([Cod_Cliente]) REFERENCES [dbo].[Dim_Clientes] ([Cod_Cliente]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_1_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_1]
+    ADD CONSTRAINT [FK_Fato_1_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_1_Dim_Organizacional]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_1]
+    ADD CONSTRAINT [FK_Fato_1_Dim_Organizacional] FOREIGN KEY ([Cod_Organizacional]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_1_Dim_Fabrica]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_1]
+    ADD CONSTRAINT [FK_Fato_1_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_1_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_1]
+    ADD CONSTRAINT [FK_Fato_1_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_2_Dim_Cliente]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_2]
+    ADD CONSTRAINT [FK_Fato_2_Dim_Cliente] FOREIGN KEY ([Cod_Cliente]) REFERENCES [dbo].[Dim_Clientes] ([Cod_Cliente]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_2_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_2]
+    ADD CONSTRAINT [FK_Fato_2_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_2_Dim_Fabrica]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_2]
+    ADD CONSTRAINT [FK_Fato_2_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_2_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_2]
+    ADD CONSTRAINT [FK_Fato_2_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_4_Dim_Cliente]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_4]
+    ADD CONSTRAINT [FK_Fato_4_Dim_Cliente] FOREIGN KEY ([Cod_Cliente]) REFERENCES [dbo].[Dim_Clientes] ([Cod_Cliente]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_4_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_4]
+    ADD CONSTRAINT [FK_Fato_4_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_4_Dim_Organizacional]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_4]
+    ADD CONSTRAINT [FK_Fato_4_Dim_Organizacional] FOREIGN KEY ([Cod_Organizacional]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_4_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_4]
+    ADD CONSTRAINT [FK_Fato_4_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_3_Dim_Fabrica]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_3]
+    ADD CONSTRAINT [FK_Fato_3_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_3_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_3]
+    ADD CONSTRAINT [FK_Fato_3_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_5_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_5]
+    ADD CONSTRAINT [FK_Fato_5_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_5_Dim_Fabrica]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_5]
+    ADD CONSTRAINT [FK_Fato_5_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Fato_5_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_5]
+    ADD CONSTRAINT [FK_Fato_5_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
 
 
 GO
@@ -418,6 +657,8 @@ IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('81ee1dc1-0896-40db-bbca-a95e653e30a0')
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'bbf87ecf-e45e-4008-bc3e-40affe194e08')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('bbf87ecf-e45e-4008-bc3e-40affe194e08')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '0a732980-21ea-4025-a35b-e5f4b82ed8be')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('0a732980-21ea-4025-a35b-e5f4b82ed8be')
 
 GO
 
