@@ -1,0 +1,39 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Dim_Tempo]
+       [dbo].[Fato_001]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Dim_Tempo].[Cod_Semana] is being dropped, data loss could occur.
+       The type for column Cod_Semestre_Ano in table [dbo].[Dim_Tempo] is currently  NVARCHAR (50) NULL but is being changed to
+          NCHAR (10) NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with
+         type  NCHAR (10) NULL.
+       The column [dbo].[Fato_001].[Unidade_Vendida] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       [dbo].[FK_Fato_1_Dim_Tempo] (Foreign Key)
+       [dbo].[FK_Fato_2_Dim_Tempo] (Foreign Key)
+       [dbo].[FK_Fato_3_Dim_Tempo] (Foreign Key)
+       [dbo].[FK_Fato_4_Dim_Tempo] (Foreign Key)
+       [dbo].[FK_Fato_5_Dim_Tempo] (Foreign Key)
+       [dbo].[FK_Fato_1_Dim_Cliente] (Foreign Key)
+       [dbo].[FK_Fato_1_Dim_Produto] (Foreign Key)
+       [dbo].[FK_Fato_1_Dim_Organizacional] (Foreign Key)
+       [dbo].[FK_Fato_1_Dim_Fabrica] (Foreign Key)
+     Table rebuild
+       [dbo].[Dim_Tempo] (Table)
+       [dbo].[Fato_001] (Table)
+     Create
+       [dbo].[FK_Fato_001_Dim_Cliente] (Foreign Key)
+       [dbo].[FK_Fato_001_Dim_Produto] (Foreign Key)
+
+** Supporting actions
+
+The column [dbo].[Dim_Tempo].[Cod_Semana] is being dropped, data loss could occur.
+The type for column Cod_Semestre_Ano in table [dbo].[Dim_Tempo] is currently  NVARCHAR (50) NULL but is being changed to  NCHAR (10) NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  NCHAR (10) NULL.
+The column [dbo].[Fato_001].[Unidade_Vendida] is being dropped, data loss could occur.
+
