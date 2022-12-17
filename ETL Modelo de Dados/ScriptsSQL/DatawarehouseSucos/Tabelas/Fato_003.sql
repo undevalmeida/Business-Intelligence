@@ -1,4 +1,0 @@
-﻿CREATE TABLE [dbo].[Fato_003]
-(
-	[Id] INT NOT NULL PRIMARY KEY
-)
