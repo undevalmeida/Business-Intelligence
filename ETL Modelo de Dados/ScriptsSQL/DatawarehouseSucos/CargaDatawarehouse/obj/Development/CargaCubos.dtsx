@@ -7,7 +7,7 @@
   DTS:CreatorName="GABRIELA\maria"
   DTS:DTSID="{405DE2B1-D0C7-4990-8BB0-0A16830F7C74}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LastModifiedProductVersion="16.0.5035.0"
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
@@ -23,6 +23,8 @@
       DTS:ObjectName="localhost">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Data Source=localhost;PROVIDER=MSOLAP;Impersonation Level=Impersonate;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>

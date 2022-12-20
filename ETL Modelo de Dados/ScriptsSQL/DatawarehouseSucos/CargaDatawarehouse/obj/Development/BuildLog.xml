@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>CargaDatawarehouse</Name>
-    <LastWriteTime>2021-03-23T13:45:59.6209927Z</LastWriteTime>
+    <LastWriteTime>2022-12-18T23:23:33.7514438Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CargaDimensões.dtsx</Name>
-      <LastWriteTime>2021-06-22T16:06:51.7648076Z</LastWriteTime>
+      <LastWriteTime>2022-12-18T23:39:31.628888Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CargaFatos.dtsx</Name>
-      <LastWriteTime>2021-01-26T18:43:07.6928Z</LastWriteTime>
+      <LastWriteTime>2022-12-18T23:23:33.6003616Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CargaDatawarehouse.dtsx</Name>
-      <LastWriteTime>2020-09-04T14:11:40Z</LastWriteTime>
+      <LastWriteTime>2022-12-17T22:21:33.1029701Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CargaCubos.dtsx</Name>
-      <LastWriteTime>2020-04-21T15:39:20Z</LastWriteTime>
+      <LastWriteTime>2022-12-17T22:21:33.100973Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
