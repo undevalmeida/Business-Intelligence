@@ -31,7 +31,17 @@
    * Assinaturas de e-mail
    * Espaço de trabalho
    * Analisar no Excel
-3. Power BI Premium - $4.995/Mês
+3. Power BI Premium Per User - $20,00/Mês
+   *  * Funcionalidades da licença free
+   * Compartilhamento privado
+   * 8 atualizações diárias
+   * Assinaturas de e-mail
+   * Espaço de trabalho
+   * Analisar no Excel
+   * **Paginated(RDL) reports**
+   * **limite de dados de 1 GB**
+   * **48 atualizações diárias**
+4. Power BI Premium - $4.995/Mês
    * Funcionalidades da lincença Pro
    * Atualizações "ilimitadas"
    * Capacidade dedicada
