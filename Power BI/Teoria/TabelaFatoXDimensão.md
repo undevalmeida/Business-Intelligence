@@ -1,6 +1,7 @@
 # Tabela Fato X Dimensão
 ### Tabela Fato
-Tabela fato representará acontecimentos, como por exemplo, vendas. Dentro dessa tabela fato, deve-se sempre haver colunas com "chaves estrangeiras", 
+Tabela fato representará acontecimentos, como por exemplo, vendas. Dentro dessa tabela fato, 
+deve-se sempre haver colunas com "chaves estrangeiras", 
 são essas "chaves estrangeiras" que irão criar uma relação entre a tabela fato e a tabela dimensão.
 
 ### Tabela Dimensão  
